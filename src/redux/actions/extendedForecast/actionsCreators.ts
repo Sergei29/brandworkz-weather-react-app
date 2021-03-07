@@ -1,3 +1,3 @@
-import { actionsTypes } from "./actionsTypes";
+import { actionsTypesExtendedForecast } from "./actionsTypes";
 
 export const actionFetchExtendedStart = () => ({});
