@@ -9,7 +9,21 @@ import { useStyles } from "./style";
  * @returns {JSX} markup
  */
 const Navigation: React.FC = () => {
-  return <nav>navigation</nav>;
+  const classes = useStyles();
+  return (
+    <nav className={classes.navigation}>
+      {arrNavLinks.map(({ intId, strPath, bExact, strName }) => (
+        <NavLink
+          key={intId}
+          to={strPath}
+          exact={bExact}
+          className={classes.navLink}
+        >
+          {strName}
+        </NavLink>
+      ))}
+    </nav>
+  );
 };
 
 export default Navigation;
