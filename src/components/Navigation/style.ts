@@ -1,4 +1,5 @@
 import { makeStyles, Theme } from "@material-ui/core/styles";
+import { green } from "@material-ui/core/colors";
 
 export const useStyles = makeStyles((theme: Theme) => ({
   navigation: {
@@ -6,9 +7,9 @@ export const useStyles = makeStyles((theme: Theme) => ({
     columnGap: theme.spacing(1),
   },
   navLink: {
-    "&.active": { color: theme.palette.secondary.main },
+    "&.active": { color: green[500] },
     textDecoration: "none",
     fontWeight: 800,
-    color: theme.palette.primary.main,
+    color: "#000",
   },
 }));

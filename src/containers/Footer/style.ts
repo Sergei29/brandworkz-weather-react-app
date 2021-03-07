@@ -4,7 +4,8 @@ export const useStyles = makeStyles({
   footer: {
     display: "flex",
     justifyContent: "center",
-    position: "absolute",
+    alignItems: "center",
+    position: "relative",
     bottom: 0,
     height: "2.5rem",
     width: "100%",

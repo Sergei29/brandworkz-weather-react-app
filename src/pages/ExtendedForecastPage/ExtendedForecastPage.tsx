@@ -1,5 +1,8 @@
 import React from "react";
 import { RouteComponentProps } from "react-router-dom";
+import { Typography } from "@material-ui/core";
+// components:
+import ExtendedForecastByLocation from "../../components/ExtendedForecastByLocation";
 // styles:
 import { useStyles } from "./style";
 
@@ -13,7 +16,10 @@ const ExtendedForecastPage: React.FC<
   const { strLocationName = "" } = match.params;
   return (
     <div>
-      <h1>Extended forecast 16days, for {strLocationName}</h1>
+      <Typography variant="h3" component="h1">
+        Extended forecast 16days
+      </Typography>
+      <ExtendedForecastByLocation strLocationName={strLocationName} />
     </div>
   );
 };
