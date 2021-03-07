@@ -2,8 +2,15 @@ import {
   ExtendedForecastStateType,
   ExtendedForecastReducerType,
 } from "../../types/types";
+import { actionsTypesExtendedForecast } from "../../actions/extendedForecast/actionsTypes";
 
-export const objInitialState: Readonly<ExtendedForecastStateType> = {
+const {
+  FETCH_EXTENDED_START,
+  FETCH_EXTENDED_SUCCESS,
+  FETCH_EXTENDED_FAIL,
+} = actionsTypesExtendedForecast;
+
+const objInitialState: Readonly<ExtendedForecastStateType> = {
   bLoading: false,
   nstrError: null,
   arrData: [],
@@ -19,7 +26,31 @@ const extendedForecastReducer: ExtendedForecastReducerType = (
   objState = objInitialState,
   objAction
 ) => {
-  return objState;
+  switch (objAction.type) {
+    case FETCH_EXTENDED_START:
+      return {
+        ...objState,
+        bLoading: true,
+      };
+
+    case FETCH_EXTENDED_SUCCESS:
+      return {
+        ...objState,
+        bLoading: false,
+        nstrError: null,
+        arrData: objAction.payload as Record<string, any>[],
+      };
+
+    case FETCH_EXTENDED_FAIL:
+      return {
+        ...objState,
+        bLoading: false,
+        nstrError: objAction.payload as string,
+      };
+
+    default:
+      return objState;
+  }
 };
 
 export default extendedForecastReducer;

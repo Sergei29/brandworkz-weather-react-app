@@ -1,7 +1,5 @@
 import { ThunkAction } from "redux-thunk";
 import { Action, Dispatch } from "redux";
-import { actionsTypesCurrentWeather } from "../actions/currentLocation/actionsTypes";
-import { actionsTypesExtendedForecast } from "../actions/extendedForecast/actionsTypes";
 
 export type CurrentWeatherStateType = {
   bLoading: boolean;
@@ -21,8 +19,8 @@ export type AppStateType = {
 };
 
 export type ActionType = {
-  type: actionsTypesCurrentWeather & actionsTypesExtendedForecast;
-  payload?: string | Record<string, any>[];
+  type: string;
+  payload?: string | Record<string, any>[] | Record<string, any>;
 };
 
 export type ThunkActionType<ReturnType = void> = ThunkAction<
