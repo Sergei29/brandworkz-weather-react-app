@@ -1,3 +1,37 @@
+# About the Weather Application:
+
+- Boiler plate created with create -react -app,
+- Typescript is used
+- Global state managed by library `redux`/`react-redux`
+- `Thunk` middleware is used,
+- Redux devTools used in Development mode
+- Data fetched with `axios`
+- UI and styling achieved by use of `Material UI` library
+- Sensible data stored in process environment variables
+- App can be run on local host dev server http://localhost:3000/
+
+# What is not done yet:
+
+- unit tests are not completed yet, run out of time, I can complete it on next weekend 13/03/2021
+- responsive styling not completed yet, I can complete it on next weekend 13/03/2021
+- app code logic hasn't been reviewed, I can review it on next weekend 13/03/2021
+
+# To start with:
+
+- clone repo: $ `git clone https://github.com/Sergei29/brandworkz-weather-react-app.git`,
+- install packages $ `npm i`
+- in project root dir , create `.env` file
+  $ `cd my-project && touch .env`
+- add following values to `.env` file:
+
+`REACT_APP_RAPID_API_KEY=0dfa4ef263msh8ce696d855e56b8p1df0bdjsn700184ea702a`
+
+`REACT_APP_RAPID_API_HOST=weatherbit-v1-mashape.p.rapidapi.com`
+
+- if intending to use Redux Devtools, in your Chrome browser add extension `https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd`
+
+- run the app in dev mode: $ `npm start`
+
 # Coding Task
 
 Your primary task is to build an app to retrieve weather information from a public weather API(https://rapidapi.com/weatherbit/api/weather/endpoints).
