@@ -1,1 +1,5 @@
-export enum actionsTypesExtendedForecast {}
+export enum actionsTypesExtendedForecast {
+  FETCH_EXTENDED_START = "FETCH_EXTENDED_START",
+  FETCH_EXTENDED_SUCCESS = "FETCH_EXTENDED_SUCCESS",
+  FETCH_EXTENDED_FAIL = "FETCH_EXTENDED_FAIL",
+}

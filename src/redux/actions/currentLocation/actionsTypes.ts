@@ -1,1 +1,5 @@
-export enum actionsTypesCurrentWeather {}
+export enum actionsTypesCurrentWeather {
+  FETCH_CURRENT_START = "FETCH_CURRENT_START",
+  FETCH_CURRENT_SUCCESS = "FETCH_CURRENT_SUCCESS",
+  FETCH_CURRENT_FAIL = "FETCH_CURRENT_FAIL",
+}

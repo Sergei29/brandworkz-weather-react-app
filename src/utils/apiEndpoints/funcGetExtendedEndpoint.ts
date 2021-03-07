@@ -1,8 +1,15 @@
+import { funcGetCoordinates } from "./funcGetCoordinates";
+
 /**
  * @description generate extended forecast request endpoint
- * @param {String} strLat location latitude
- * @param {String} strLong location longitude
+ * @param {String} strLocationName location name (lowercase)
  * @returns {String} API request endpoint
  */
-export const funcGetExtendedEndpoint = (strLat: string, strLong: string) =>
-  `/forecast/daily?lat=${strLat}&lon=${strLong}`;
+export const funcGetExtendedEndpoint = (strLocationName: string) => {
+  const nObjCoordinates = funcGetCoordinates(strLocationName);
+  if (!nObjCoordinates) {
+    throw new Error("Provided location is not in the list.");
+  }
+
+  return `/forecast/daily?lat=${nObjCoordinates.lat}&lon=${nObjCoordinates.long}`;
+};
