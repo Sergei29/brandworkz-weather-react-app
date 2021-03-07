@@ -1,9 +1,8 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 export const useStyles = makeStyles({
-  currentLocationPage: {
+  forecastField: {
     display: "flex",
-    flexDirection: "column",
-    width: "100%",
+    justifyContent: "space-between",
   },
 });

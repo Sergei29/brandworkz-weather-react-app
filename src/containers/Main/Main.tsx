@@ -12,7 +12,8 @@ type Props = {
  * @returns {JSX} markup
  */
 const Main: React.FC<Props> = ({ children }) => {
-  return <main>{children}</main>;
+  const classes = useStyles();
+  return <main className={classes.main}>{children}</main>;
 };
 
 export default Main;

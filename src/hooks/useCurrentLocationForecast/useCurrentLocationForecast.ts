@@ -17,7 +17,7 @@ const useCurrentLocationForecast = (strLocationName: string) => {
 
   useEffect(() => {
     dispatch(actionFetchCurrent(strLocationName));
-  }, [dispatch]);
+  }, [dispatch, strLocationName]);
 
   return { bLoading, nstrError, arrData };
 };

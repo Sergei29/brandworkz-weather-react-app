@@ -1,4 +1,7 @@
 import React from "react";
+import { Typography } from "@material-ui/core";
+// components:
+import CurrentLocationWeather from "../../components/CurrentLocationWeather";
 // styles:
 import { useStyles } from "./style";
 
@@ -10,7 +13,10 @@ const CurrentLocationPage: React.FC = () => {
   const classes = useStyles();
   return (
     <div className={classes.currentLocationPage}>
-      <h1>London weather today</h1>
+      <Typography variant="h3" component="h1">
+        Current weather today
+      </Typography>
+      <CurrentLocationWeather />
     </div>
   );
 };
