@@ -12,7 +12,8 @@ type Props = {
  * @returns {JSX} markup
  */
 const Footer: React.FC<Props> = ({ children }) => {
-  return <footer>{children}</footer>;
+  const classes = useStyles();
+  return <footer className={classes.footer}>{children}</footer>;
 };
 
 export default Footer;

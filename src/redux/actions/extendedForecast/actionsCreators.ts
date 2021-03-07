@@ -54,7 +54,9 @@ export const actionFetchExtended = (
 
   try {
     const strEndpoint = funcGetExtendedEndpoint(strLocationname);
-    const { data: arrData } = await axiosWeather.get(strEndpoint);
+    const {
+      data: { data: arrData },
+    } = await axiosWeather.get(strEndpoint);
 
     dispatch(actionFetchExtendedSuccess(arrData));
   } catch (error) {

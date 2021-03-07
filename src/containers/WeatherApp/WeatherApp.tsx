@@ -19,10 +19,11 @@ import { useStyles } from "./style";
  * @returns {JSX} markup
  */
 const WeatherApp: React.FC = () => {
+  const classes = useStyles();
   return (
     <Provider store={objApplicationStore}>
       <BrowserRouter>
-        <Container>
+        <Container className={classes.weatherApp}>
           <Header>
             <Navigation />
           </Header>
@@ -36,7 +37,9 @@ const WeatherApp: React.FC = () => {
               <Route component={NotFoundPage} />
             </Switch>
           </Main>
-          <Footer>footer</Footer>
+          <Footer>
+            <small>this page created for training purposes only.</small>
+          </Footer>
         </Container>
       </BrowserRouter>
     </Provider>

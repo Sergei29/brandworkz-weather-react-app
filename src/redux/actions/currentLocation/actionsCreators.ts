@@ -54,7 +54,9 @@ export const actionFetchCurrent = (
 
   try {
     const strEndpoint = funcGetCurrentEndpoint(strLocationname);
-    const { data: arrData } = await axiosWeather.get(strEndpoint);
+    const {
+      data: { data: arrData },
+    } = await axiosWeather.get(strEndpoint);
 
     dispatch(actionFetchCurrentSuccess(arrData));
   } catch (error) {
