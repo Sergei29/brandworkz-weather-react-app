@@ -3,9 +3,9 @@ import { axiosWeather } from "../../utils";
 import { renderHook } from "@testing-library/react-hooks";
 import { Provider } from "react-redux";
 import objApplicationStore from "../../redux/store/store";
-import useCurrentLocationForecast from "./useCurrentLocationForecast";
+import useExtendedForecast from "./useExtendedForecast";
 import {
-  objCurrentMockResponse,
+  objExtendedMockResponse,
   strMockErrorMessage,
   strTestLocation,
 } from "../../utils/testData/testData";
@@ -14,16 +14,15 @@ type Props = {
   children: React.ReactNode;
 };
 
-describe("custom hook useCurrentLocationForecast", () => {
+describe("useExtendedForecast", () => {
   const wrapper = ({ children }: Props) => (
     <Provider store={objApplicationStore}>{children}</Provider>
   );
 
   it("should handle the fetch start phase", () => {
-    const { result } = renderHook(
-      () => useCurrentLocationForecast(strTestLocation),
-      { wrapper }
-    );
+    const { result } = renderHook(() => useExtendedForecast(strTestLocation), {
+      wrapper,
+    });
 
     expect(result.current.bLoading).toEqual(true);
   });
@@ -31,27 +30,28 @@ describe("custom hook useCurrentLocationForecast", () => {
   it("should handle the fetch success phase", async () => {
     jest
       .spyOn(axiosWeather, "get")
-      .mockResolvedValueOnce(objCurrentMockResponse);
+      .mockResolvedValueOnce(objExtendedMockResponse);
 
     const { result, waitForNextUpdate } = renderHook(
-      () => useCurrentLocationForecast(strTestLocation),
+      () => useExtendedForecast(strTestLocation),
       { wrapper }
     );
 
     await waitForNextUpdate();
-    const { bLoading, nstrError, arrData } = result.current;
+    const { bLoading, nstrError, arrForecast } = result.current;
 
     expect(bLoading).toEqual(false);
     expect(nstrError).toEqual(null);
-    expect(arrData.length).toBeGreaterThan(0);
+    expect(arrForecast.length).toBeGreaterThan(0);
   });
 
   it("should handle the fetch failure event", async () => {
     jest
       .spyOn(axiosWeather, "get")
       .mockRejectedValueOnce(new Error(strMockErrorMessage));
+
     const { result, waitForNextUpdate } = renderHook(
-      () => useCurrentLocationForecast(strTestLocation),
+      () => useExtendedForecast(strTestLocation),
       { wrapper }
     );
 
