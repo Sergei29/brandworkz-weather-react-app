@@ -1,6 +1,4 @@
 import React from "react";
-// styles:
-import { useStyles } from "./style";
 
 /**
  * @description not found page, displayed when page path does not exist
