@@ -7,6 +7,7 @@
 - Redux devTools used in Development mode
 - Data fetched with `axios`
 - UI and styling achieved by use of `Material UI` library
+- Unit tests are achieved by: `jest`, `enzyme`, `react-hooks-testing-library`
 - Sensible data stored in process environment variables
 - App can be run on local host dev server http://localhost:3000/
 
