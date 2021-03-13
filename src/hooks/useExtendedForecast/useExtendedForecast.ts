@@ -58,7 +58,10 @@ const useExtendedForecast = (strLocationName: string) => {
    * @description resets back to non-filtered state
    * @returns {undefined} sets state
    */
-  const funcResetFilter = useCallback(() => setArrForecast(arrData), [arrData]);
+  const funcResetFilter = useCallback(() => {
+    setnObjFilterCriteria(null);
+    setArrForecast(arrData);
+  }, [arrData]);
 
   /**
    * @description effect, fetch forecast on mount
@@ -75,7 +78,7 @@ const useExtendedForecast = (strLocationName: string) => {
   }, [arrData]);
 
   useEffect(() => {
-    funcResetFilter();
+    setArrForecast(arrData);
     if (!nObjFilterCriteria) return;
     const { nfloatMax, nfloatMin } = nObjFilterCriteria;
 
@@ -96,7 +99,7 @@ const useExtendedForecast = (strLocationName: string) => {
         )
       );
     }
-  }, [nObjFilterCriteria, funcResetFilter]);
+  }, [nObjFilterCriteria, funcResetFilter, arrData]);
 
   return {
     bLoading,
