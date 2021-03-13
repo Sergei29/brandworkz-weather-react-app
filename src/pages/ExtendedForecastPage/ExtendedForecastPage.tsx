@@ -13,10 +13,11 @@ import { useStyles } from "./style";
 const ExtendedForecastPage: React.FC<
   RouteComponentProps<{ strLocationName: string }>
 > = ({ match }) => {
+  const classes = useStyles();
   const { strLocationName = "" } = match.params;
   return (
     <div>
-      <Typography variant="h3" component="h1">
+      <Typography variant="h3" component="h1" className={classes.pageHeading}>
         Extended forecast 16days
       </Typography>
       <ExtendedForecastByLocation strLocationName={strLocationName} />

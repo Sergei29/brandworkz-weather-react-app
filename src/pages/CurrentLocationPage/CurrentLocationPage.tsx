@@ -13,7 +13,7 @@ const CurrentLocationPage: React.FC = () => {
   const classes = useStyles();
   return (
     <div className={classes.currentLocationPage}>
-      <Typography variant="h3" component="h1">
+      <Typography variant="h3" component="h1" className={classes.pageHeading}>
         Current weather today
       </Typography>
       <CurrentLocationWeather />

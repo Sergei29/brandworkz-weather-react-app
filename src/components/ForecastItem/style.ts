@@ -9,5 +9,8 @@ export const useStyles = makeStyles((theme: Theme) => ({
   },
   cardContentRoot: {
     backgroundColor: blueGrey[100],
+    [theme.breakpoints.down("xs")]: {
+      padding: theme.spacing(0.5),
+    },
   },
 }));

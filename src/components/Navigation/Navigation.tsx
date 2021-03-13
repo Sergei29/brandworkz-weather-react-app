@@ -1,5 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { useMediaQuery, useTheme } from "@material-ui/core";
+import MobileNavbar from "./components/MobileNavbar";
 import { arrNavLinks } from "./arrNavLinks";
 // styles:
 import { useStyles } from "./style";
@@ -10,18 +12,24 @@ import { useStyles } from "./style";
  */
 const Navigation: React.FC = () => {
   const classes = useStyles();
+  const theme = useTheme();
+  const bIsMobile = useMediaQuery(theme.breakpoints.down("xs"));
+
+  const renderDesktopNavLinks = () =>
+    arrNavLinks.map(({ intId, strPath, bExact, strName }) => (
+      <NavLink
+        key={intId}
+        to={strPath}
+        exact={bExact}
+        className={classes.navLink}
+      >
+        {strName}
+      </NavLink>
+    ));
+
   return (
     <nav className={classes.navigation}>
-      {arrNavLinks.map(({ intId, strPath, bExact, strName }) => (
-        <NavLink
-          key={intId}
-          to={strPath}
-          exact={bExact}
-          className={classes.navLink}
-        >
-          {strName}
-        </NavLink>
-      ))}
+      {bIsMobile ? <MobileNavbar /> : renderDesktopNavLinks()}
     </nav>
   );
 };

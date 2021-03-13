@@ -1,6 +1,4 @@
 import React from "react";
-// styles:
-import { useStyles } from "./style";
 
 /**
  * @description loading indicator
