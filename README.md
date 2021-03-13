@@ -9,7 +9,6 @@
 - UI and styling achieved by use of `Material UI` library
 - Sensible data stored in process environment variables
 - App can be run on local host dev server http://localhost:3000/
-- To generate coverage report can be run by script (see in `package.json`), then to view unit tests code coverage report can be found at`/coverage/lcov-report/index.html`,
 
 # To start with:
 
@@ -26,6 +25,8 @@
 - if intending to use Redux Devtools, in your Chrome browser add extension `https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd`
 
 - run the app in dev mode: $ `npm start`
+
+- To generate coverage report can be run by script $ `npm run test:codeCoverage` (see in `package.json`), then to view unit tests code coverage report can be found at`/coverage/lcov-report/index.html`,
 
 # Coding Task
 
