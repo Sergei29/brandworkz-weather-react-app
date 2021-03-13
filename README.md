@@ -11,11 +11,6 @@
 - App can be run on local host dev server http://localhost:3000/
 - In terms of unit tests, code coverage report can be found at`/coverage/lcov-report/index.html`, whilst to generate coverage report can be run by script (see in `package.json`);
 
-# What is not done yet:
-
-- responsive styling not completed yet, I can complete it on next weekend 13/03/2021
-- app code logic hasn't been reviewed, I can review it on next weekend 13/03/2021
-
 # To start with:
 
 - clone repo: $ `git clone https://github.com/Sergei29/brandworkz-weather-react-app.git`,
